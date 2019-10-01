@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "net.fabricmc.example.mixin",
+  "package": "org.uk.vktec.butterflmixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
   ],
