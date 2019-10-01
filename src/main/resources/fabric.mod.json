@@ -18,17 +18,14 @@
 
   "environment": "*",
   "entrypoints": {
-    "main": [
-      "uk.org.vktec.butterfly.ExampleMod"
-    ]
+    "main": []
   },
   "mixins": [
     "butterfly.mixins.json"
   ],
 
   "depends": {
-    "fabricloader": ">=0.4.0",
-    "fabric": "*"
+    "fabricloader": ">=0.4.0"
   },
   "suggests": {
     "flamingo": "*"

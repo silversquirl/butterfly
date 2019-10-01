@@ -1,11 +1,9 @@
 {
   "required": true,
-  "package": "org.uk.vktec.butterflmixin",
+  "package": "org.uk.vktec.butterfly.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-  ],
-  "client": [
-    "ExampleMixin"
+    "CommandManagerMixin"
   ],
   "injectors": {
     "defaultRequire": 1
