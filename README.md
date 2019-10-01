@@ -1,16 +1,13 @@
-# Fabric Example Mod
+# Butterfly
 
-## Setup
+Butterfly is a Minecraft mod for 1.14.4 Fabric that reverts certain changes to behaviour, improving the quality of technical play.
 
-1. Edit build.gradle and mod.json to suit your needs.
-    * The "mixins" object can be removed from mod.json if you do not need to use mixins.
-    * Please replace all occurences of "modid" with your own mod ID - sometimes, a different string may also suffice.
-2. Run the following command:
+## Bugs
 
-```
-./gradlew idea
-```
+Below is a list of bugs to be un-fixed and features to be removed:
 
-## License
-
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+- [ ] Water reduces more light than other transparent blocks
+- [ ] Dragon eggs break blocks when dropped in lazy chunks
+- [ ] A 5x5 grid of loaded chunks load the centre chunk for entity processing
+- [ ] Hoppers load the chunk they are attempting to deposit items into
+- Lots of other useful things I don't know about
