@@ -1,4 +1,4 @@
-package net.fabricmc.example.mixin;
+package uk.org.vktec.butterfly.mixin;
 
 import net.minecraft.client.MinecraftClient;
 import org.spongepowered.asm.mixin.Mixin;

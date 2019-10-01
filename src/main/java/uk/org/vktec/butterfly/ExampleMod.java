@@ -1,4 +1,4 @@
-package net.fabricmc.example;
+package uk.org.vktec.butterfly;
 
 import net.fabricmc.api.ModInitializer;
 
