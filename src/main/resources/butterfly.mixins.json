@@ -4,7 +4,8 @@
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "CommandManagerMixin",
-    "FluidBlockMixin"
+    "FluidBlockMixin",
+    "DragonEggBlockMixin"
   ],
   "injectors": {
     "defaultRequire": 1
