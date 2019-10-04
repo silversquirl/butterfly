@@ -5,7 +5,9 @@
   "mixins": [
     "CommandManagerMixin",
     "FluidBlockMixin",
-    "DragonEggBlockMixin"
+    "DragonEggBlockMixin",
+    "ChunkHolderMixin",
+    "ThreadedAnvilChunkStorageMixin"
   ],
   "injectors": {
     "defaultRequire": 1
