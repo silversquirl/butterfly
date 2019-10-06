@@ -1,15 +1,16 @@
 {
-  "required": true,
-  "package": "uk.org.vktec.butterfly.mixin",
-  "compatibilityLevel": "JAVA_8",
-  "mixins": [
-    "CommandManagerMixin",
-    "FluidBlockMixin",
-    "DragonEggBlockMixin",
-    "ChunkHolderMixin",
-    "ThreadedAnvilChunkStorageMixin"
-  ],
-  "injectors": {
-    "defaultRequire": 1
-  }
+	"required": true,
+	"package": "uk.org.vktec.butterfly.mixin",
+	"compatibilityLevel": "JAVA_8",
+	"mixins": [
+		"CommandManagerMixin",
+		"FluidBlockMixin",
+		"DragonEggBlockMixin",
+		"ChunkHolderMixin",
+		"ThreadedAnvilChunkStorageMixin",
+		"HopperBlockEntityMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
 }

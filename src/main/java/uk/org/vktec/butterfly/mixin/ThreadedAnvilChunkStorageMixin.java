@@ -25,6 +25,7 @@ public abstract class ThreadedAnvilChunkStorageMixin {
 
 	@Inject(method = "setLevel", at = @At("RETURN"))
 	private void updatePromotionsOnLevelSet(long chunk, int level, ChunkHolder passedInChunkHolder, int old_level, CallbackInfoReturnable<ChunkHolder> cinfo) {
+		// If we're already in the process of updating promotions, we don't want to restart that
 		if (!this.visitedChunks.isEmpty()) {
 			return;
 		}
