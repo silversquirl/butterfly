@@ -1,3 +1,5 @@
+// vim: noet
+
 package uk.org.vktec.butterfly;
 
 import net.minecraft.world.World;

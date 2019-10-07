@@ -1,3 +1,5 @@
+// vim: noet
+
 package uk.org.vktec.butterfly.mixin;
 
 import net.minecraft.server.command.CommandManager;

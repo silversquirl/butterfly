@@ -1,3 +1,5 @@
+// vim: noet
+
 package uk.org.vktec.butterfly;
 
 public interface PromotableChunkHolder {
