@@ -5,7 +5,7 @@ Butterfly is a Minecraft mod for 1.14.4 Fabric that reverts certain changes to b
 ## Usage
 
 Butterfly is alpha quality software.
-If you're feeling brave and want to try it out, you can build it using the command `./gradlew remapJar` - the resulting JAR can be found in `build/libs/butterfly-1.0.0.jar`.
+If you're feeling brave and want to try it out, you can build it using the command `./gradlew remapJar` - the resulting JAR can be found in `build/libs/butterfly-0.1.0.jar`.
 Be warned, however, that there's no guarantee it won't destroy your world and/or eat your laundry.
 
 ## Bugs
