@@ -8,7 +8,8 @@
 		"DragonEggBlockMixin",
 		"ChunkHolderMixin",
 		"ThreadedAnvilChunkStorageMixin",
-		"HopperBlockEntityMixin"
+		"HopperBlockEntityMixin",
+		"FallingBlockEntityMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
