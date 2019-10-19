@@ -29,5 +29,10 @@ public abstract class FallingBlockEntityMixin extends Entity {
 		if (FallingBlock.canFallThrough(this.world.getBlockState(new BlockPos(this.x, this.y - 0.01, this.z)))) {
 			this.onGround = false;
 		}
+
+		// This is a check in entity.baseTick - Mojang are big brain and don't call baseTick from FallingBlockEntity.tick
+		if (this.y < -64) {
+			this.destroy();
+		}
 	}
 }
