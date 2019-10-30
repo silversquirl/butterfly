@@ -3,6 +3,7 @@
 package uk.org.vktec.butterfly.mixin;
 
 import net.minecraft.server.world.ChunkHolder;
+import net.minecraft.server.world.ThreadedAnvilChunkStorage;
 import net.minecraft.util.math.ChunkPos;
 import org.spongepowered.asm.lib.Opcodes;
 import org.spongepowered.asm.mixin.Mixin;
@@ -10,11 +11,15 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 import uk.org.vktec.butterfly.PromotableChunkHolder;
+import uk.org.vktec.butterfly.TickableChunkHolder;
 
 @Mixin(ChunkHolder.class)
-public abstract class ChunkHolderMixin implements PromotableChunkHolder {
+public abstract class ChunkHolderMixin implements PromotableChunkHolder, TickableChunkHolder {
 	@Shadow
 	int level;
+
+	@Shadow
+	protected abstract void tick(ThreadedAnvilChunkStorage class_3898_1);
 
 	private boolean promoted;
 
@@ -34,5 +39,9 @@ public abstract class ChunkHolderMixin implements PromotableChunkHolder {
 
 	public void setPromoted(boolean promoted) {
 		this.promoted = promoted;
+	}
+
+	public void tickProxy(ThreadedAnvilChunkStorage tacs) {
+		this.tick(tacs);
 	}
 }

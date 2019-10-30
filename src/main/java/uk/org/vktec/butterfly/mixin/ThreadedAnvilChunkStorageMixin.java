@@ -14,9 +14,10 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import uk.org.vktec.butterfly.PromotableChunkHolder;
+import uk.org.vktec.butterfly.ChunkHolderProvider;
 
 @Mixin(ThreadedAnvilChunkStorage.class)
-public abstract class ThreadedAnvilChunkStorageMixin {
+public abstract class ThreadedAnvilChunkStorageMixin implements ChunkHolderProvider {
 	@Shadow protected abstract ChunkHolder getChunkHolder(long chunk);
 
 	Set<Long> visitedChunks = new HashSet<Long>();
@@ -73,5 +74,9 @@ public abstract class ThreadedAnvilChunkStorageMixin {
 		}
 
 		((PromotableChunkHolder)currentChunk).setPromoted(promoted);
+	}
+
+	public ChunkHolder getChunkHolderProxy(ChunkPos pos) {
+		return this.getChunkHolder(pos.toLong());
 	}
 }
