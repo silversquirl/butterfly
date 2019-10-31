@@ -16,6 +16,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import uk.org.vktec.butterfly.Butterfly;
 
 @Mixin(HopperBlockEntity.class)
 public abstract class HopperBlockEntityMixin extends LootableContainerBlockEntity {
@@ -33,11 +34,9 @@ public abstract class HopperBlockEntityMixin extends LootableContainerBlockEntit
 		BlockPos targetBlock = this.pos.offset(facing);
 		ChunkPos targetChunk = new ChunkPos(targetBlock);
 
-		if (targetChunk.x == this.pos.getX() >> 4 && targetChunk.z == this.pos.getZ() >> 4) {
-			return;
-		}
+		// Optimization
+		if (targetChunk.equals(new ChunkPos(this.pos))) return;
 
-		ServerChunkManager chunkManager = ((ServerWorld)this.world).method_14178();
-		chunkManager.addTicket(LOAD_TICKET, targetChunk, 1, this.world.getTime());
+		Butterfly.loadImmediately((ServerWorld)world, targetChunk, Butterfly.LEVEL_TICKING);
 	}
 }
