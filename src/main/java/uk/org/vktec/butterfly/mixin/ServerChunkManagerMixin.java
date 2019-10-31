@@ -16,10 +16,10 @@ import uk.org.vktec.butterfly.LoadableServerChunkManager;
 
 @Mixin(ServerChunkManager.class)
 public abstract class ServerChunkManagerMixin extends ChunkManager implements LoadableServerChunkManager {
-  @Shadow
-  ThreadedAnvilChunkStorage threadedAnvilChunkStorage;
+	@Shadow
+	ThreadedAnvilChunkStorage threadedAnvilChunkStorage;
 
-  public void forceLoadChunk(ChunkPos pos) {
+	public void forceLoadChunk(ChunkPos pos) {
 		// Given the ChunkPos of a chunk WITH A SUBMITTED ChunkTicket, loads
 		// the given chunk immediately rather than at the start/end of the
 		// tick.
@@ -32,5 +32,5 @@ public abstract class ServerChunkManagerMixin extends ChunkManager implements Lo
 		}
 		// Tick the ChunkHolder
 		((TickableChunkHolder)holder).tickProxy(threadedAnvilChunkStorage);
-  }
+	}
 }
